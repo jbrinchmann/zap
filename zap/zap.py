@@ -81,7 +81,7 @@ def process(cubefits, outcubefits='DATACUBE_ZAP.fits', clean=True,
             zlevel='median', cftype='median', cfwidthSVD=300, cfwidthSP=300,
             nevals=[], extSVD=None, skycubefits=None, mask=None,
             interactive=False, ncpu=None, pca_class=None, n_components=None,
-            overwrite=False, varcurvefits=None, zero_nan_slices=False):
+            overwrite=False, varcurvefits=None, zero_nan_slices=True):
     """ Performs the entire ZAP sky subtraction algorithm.
 
     This is the main ZAP function. It works on an input FITS file and
@@ -348,7 +348,7 @@ class Zap(object):
         NaNs have been set to zero 
     """
 
-    def __init__(self, cubefits, pca_class=None, n_components=None, zero_nan_slices=False):
+    def __init__(self, cubefits, pca_class=None, n_components=None, zero_nan_slices=True):
         self.cubefits = cubefits
         self.ins_mode = None
 
